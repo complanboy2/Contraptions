@@ -13,7 +13,7 @@
 @implementation WelcomeScreen
 
 -(id) init {
-    
+    NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     if( self = [super init]) {
         layer = [WelcomeScreenLayer node];
         [self addChild:layer];
@@ -22,6 +22,7 @@
 }
 
 -(void) dealloc {
+    NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [layer dealloc];
     layer = nil;
     

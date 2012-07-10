@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "GLES-Render.h"
+#import "InventoryLayer.h"
 
 #define PTM_RATIO 32
 
@@ -17,12 +18,15 @@
     b2World* world;
 	GLESDebugDraw *m_debugDraw;
     CCSprite* listOfObjects;
-    CCMenu* openInventoryMenu;
+    CCSprite* backGround;
 }
 
 -(b2Vec2) toMetres:(CGPoint) point;
 -(CGPoint) toPixels:(b2Vec2) vec;
 
--(void)openInventory;
+-(void)startSimulation;
+
+-(void) AddBall:(CGPoint) point withSpriteAs:(CCSprite*) ball;
+-(void) AddGoal:(CGPoint) point withSpriteAs:(CCSprite*) goal;
 
 @end

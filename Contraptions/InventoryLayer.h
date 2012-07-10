@@ -13,13 +13,8 @@
     CCMenu* inventoryMenu;
 }
 
--(void)HoverPad;
--(void)ConveyorLeft;
--(void)ConveyorRight;
--(void)Funnel;
--(void)JumpPadLeft;
--(void)JumpPadRight;
--(void)MagnetPush;
--(void)MagnetPull;
--(void)BackBoard;
+-(id)init;
+
+-(void) displayInventory;
+
 @end

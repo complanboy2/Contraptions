@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GenericLevel.h"
+#import "GenericLevelScene.h"
 
 @class RootViewController;
 

@@ -11,10 +11,18 @@
 #import "GenericLevelLayer.h"
 #import "InventoryLayer.h"
 
-@interface GenericLevel : CCScene {
+@interface GenericLevelScene : CCScene {
     GenericLevelLayer* layer;
     InventoryLayer* inventoryLayer;
+    CCMenu* openInventoryMenu;
+    CCMenu* startSimulationMenu;
+    CGSize screenSize;
 }
+
+-(void)openInventory;
+
+-(void)AddBall;
+-(void)AddGoal;
 
 -(void)AddHoverPad;
 -(void)AddConveyorLeft;
@@ -26,6 +34,7 @@
 -(void)AddMagnetPull;
 -(void)AddBackBoard;
 
--(void)displayInventoryLayer;
+-(void) toggleLayers;
+-(void) startSimulation;
 
 @end

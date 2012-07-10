@@ -14,18 +14,28 @@
     self = [super init];
     if(self) {
         [self setIsTouchEnabled:YES];
-        
-        CCSprite* hoverPadSprite = [CCSprite spriteWithFile:@"Icon.png"];
-        
-        CCMenuItemSprite* hoverpad = [CCMenuItemSprite itemFromNormalSprite:hoverPadSprite selectedSprite:hoverPadSprite target:self selector:@selector(HoverPad)];
-        inventoryMenu = [CCMenu menuWithItems:hoverpad, nil];
-        [self addChild:inventoryMenu];
-        
-        CGSize screenSize = [[CCDirector sharedDirector] winSize];
-        [inventoryMenu setPosition:CGPointMake(screenSize.width/2, screenSize.height/2)];
-        
     }
     return self;
+}
+
+-(void) displayInventory {
+    [CCMenuItemFont setFontSize:32];
+    CCMenuItemFont* hoverPad = [CCMenuItemFont itemFromString:@"Hover Pad" target:self.parent selector:@selector(AddHoverPad)];
+    NSLog(@"Parent class is %@", NSStringFromClass([self.parent class]));
+    CCMenuItemFont* conveyorLeft = [CCMenuItemFont itemFromString:@"L.Conveyor" target:self.parent selector:@selector(AddConveyorLeft)];
+    CCMenuItemFont* conveyorRight = [CCMenuItemFont itemFromString:@"R.Conveyor" target:self.parent selector:@selector(AddConveyorRight)];
+    CCMenuItemFont* jumpPadLeft = [CCMenuItemFont itemFromString:@"L.Jump Pad" target:self.parent selector:@selector(AddJumpPadLeft)];
+    CCMenuItemFont* jumpPadRight = [CCMenuItemFont itemFromString:@"R.Jump Pad" target:self.parent selector:@selector(AddJumpPadRight)];
+    CCMenuItemFont* magnetPush = [CCMenuItemFont itemFromString:@"Magnet Push" target:self.parent selector:@selector(AddMagnetPush)];
+    CCMenuItemFont* magnetPull = [CCMenuItemFont itemFromString:@"Magnet Pull" target:self.parent
+        selector:@selector(AddMagnetPull)];
+    
+    inventoryMenu = [CCMenu menuWithItems:hoverPad, conveyorLeft, conveyorRight, jumpPadLeft, jumpPadRight, magnetPush, magnetPull, nil];
+    [self addChild:inventoryMenu];
+    
+    CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    [inventoryMenu setPosition:CGPointMake(screenSize.width/2, screenSize.height/2)];
+    [inventoryMenu alignItemsVerticallyWithPadding:10.0f];
 }
 
 -(void) dealloc {
@@ -33,34 +43,6 @@
     inventoryMenu = nil;
     
     [super dealloc];
-}
-
--(void)HoverPad {
-    [[self parent] AddHoverPad];
-}
--(void)ConveyorLeft {
-    
-}
--(void)ConveyorRight {
-    
-}
--(void)Funnel {
-    
-}
--(void)JumpPadLeft {
-    
-}
--(void)JumpPadRight {
-    
-}
--(void)MagnetPush {
-    
-}
--(void)MagnetPull {
-    
-}
--(void)BackBoard {
-    
 }
 
 @end

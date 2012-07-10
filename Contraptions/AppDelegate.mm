@@ -114,7 +114,7 @@
     // WelcomeScreen* welcomeScreen = [WelcomeScreen node];
 	// [[CCDirector sharedDirector] runWithScene: welcomeScreen];
     
-    GenericLevel* newLevel = [GenericLevel node];
+    GenericLevelScene* newLevel = [GenericLevelScene node];
     [[CCDirector sharedDirector] runWithScene: newLevel];
     
     
