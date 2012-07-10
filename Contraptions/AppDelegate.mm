@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "WelcomeScreen.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -110,8 +110,14 @@
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
-	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	// Uncomment the following for the full version of the Game
+    // WelcomeScreen* welcomeScreen = [WelcomeScreen node];
+	// [[CCDirector sharedDirector] runWithScene: welcomeScreen];
+    
+    GenericLevel* newLevel = [GenericLevel node];
+    [[CCDirector sharedDirector] runWithScene: newLevel];
+    
+    
 }
 
 

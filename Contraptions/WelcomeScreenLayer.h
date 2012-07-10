@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "LoadingScene.h"
 
 @interface WelcomeScreenLayer : CCLayer {
-    
+    CCMenu* mainMenu;
 }
+-(id) init;
+-(void) dealloc;
 
+-(void)startNewGame;
+-(void)displayInstructions;
+-(void)closeApplication;
 @end

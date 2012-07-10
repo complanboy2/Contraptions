@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "WelcomeScreenLayer.h"
 
 @interface WelcomeScreen : CCScene {
-    CCMenu* mainMenu;
+    WelcomeScreenLayer* layer;
 }
+-(id) init;
+-(void) dealloc;
 
 @end
