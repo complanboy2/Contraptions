@@ -68,7 +68,10 @@
         containerShape.SetAsEdge(upperRightCorner, lowerRightCorner); 
         containerBody->CreateFixture(&containerShape, density);
         // Added the edges of the Physics World
+        defaultPoint = CGPointMake(screenSize.width/2, screenSize.height/2);
         
+        listOfObjects = [[NSMutableArray alloc] init];
+        selSpriteToMove = nil;
         // The simulation has not started yet
     }
     return self;
@@ -203,4 +206,92 @@
 
 }
 
+-(void)AddHoverPad {
+    CCSprite* hoverPad = [CCSprite spriteWithFile:@"spring.png"];
+    [listOfObjects addObject:hoverPad];
+    [self addChild:hoverPad];
+    [hoverPad setPosition:defaultPoint];
+}
+-(void)AddConveyorLeft {
+    
+}
+-(void)AddConveyorRight {
+    
+}
+-(void)AddFunnel {
+    
+}
+-(void)AddJumpPadLeft {
+    
+}
+-(void)AddJumpPadRight {
+    
+}
+-(void)AddMagnetPush {
+    
+}
+-(void)AddMagnetPull {
+    
+}
+-(void)AddBackBoard {
+    
+}
+
+-(CCSprite*) returnSpriteThatIsTouched:(CGPoint)touchedPoint {
+    NSLog(@"%@ ,%@",NSStringFromSelector(_cmd),self);
+    NSLog(@"It came here to return the sprite that is being touched");
+    for( CCSprite* spriteObject in listOfObjects) {
+        if(CGRectContainsPoint(spriteObject.boundingBox, touchedPoint)) {
+            return spriteObject;
+        }
+    }
+    return nil;
+}
+
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@ , %@",NSStringFromSelector(_cmd), self);
+    NSLog(@"It came to the ccTouchesBegan function");
+    NSLog(@"Number of touches are %d",[touches count]);
+    
+    // I dont know why, but it is not calling ccTouchBegan
+    // Disable multiple touches as of now.
+    NSAssert([touches count]==1, @"Multiple touches have been disabled for now ccTouchesBegan");
+    [self ccTouchBegan:[touches anyObject] withEvent:event];
+}
+
+-(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@ , %@",NSStringFromSelector(_cmd), self);
+    NSAssert([touches count]==1, @"Multiple touches have been disabled for now ccTouchesMoved");
+    [self ccTouchMoved:[touches anyObject] withEvent:event];
+}
+
+-(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@ , %@",NSStringFromSelector(_cmd), self);
+    NSAssert([touches count]==1, @"Multiple touches have been disabled for now ccTouchesEnded");
+    [self ccTouchMoved:[touches anyObject] withEvent:event];
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    NSLog(@"%@ ,%@",NSStringFromSelector(_cmd),self);
+    NSLog(@"It came here to cTouchBegan");
+    selSpriteToMove = [self returnSpriteThatIsTouched:[self convertTouchToNodeSpace:touch]];
+    return YES;
+}
+
+
+-(void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
+    NSLog(@"%@ ,%@",NSStringFromSelector(_cmd),self);
+    NSLog(@"The ccTouchMoved method is called");
+    CGPoint newPoint = [self convertTouchToNodeSpace:touch];
+    if(selSpriteToMove != nil) {
+        [selSpriteToMove setPosition:newPoint];
+    }
+}
+
+-(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    NSLog(@"%@ ,%@",NSStringFromSelector(_cmd),self);
+    selSpriteToMove = nil;
+    CGPoint finalPoint = [self convertTouchToNodeSpace:touch];
+    NSLog(@"The image was finally placed at (%f,%f)",finalPoint.x,finalPoint.y);
+}
 @end

@@ -67,47 +67,56 @@
 }
 
 -(void)AddGoal {
+    NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     CCSprite* goalSprite = [CCSprite spriteWithFile:@"cup.png"];
     [layer AddGoal:CGPointMake(screenSize.width-48, (48+16)) withSpriteAs:goalSprite];
-    // Taking into consideration the already existing OpenInventory Menu
 }
 
 -(void)AddHoverPad {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddHoverPad];
 }
 
 -(void)AddConveyorLeft {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddConveyorLeft];
 }
 -(void)AddConveyorRight {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddConveyorRight];
 }
 -(void)AddFunnel {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddFunnel];
 }
 -(void)AddJumpPadLeft {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddJumpPadLeft];
 }
 -(void)AddJumpPadRight {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddJumpPadRight];
 }
 -(void)AddMagnetPush {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddMagnetPush];
 }
 -(void)AddMagnetPull {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddMagnetPull];
 }
 -(void)AddBackBoard {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     [self toggleLayers];
+    [layer AddBackBoard];
 }
 
 

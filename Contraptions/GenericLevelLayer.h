@@ -17,8 +17,10 @@
 @interface GenericLevelLayer : CCLayer {
     b2World* world;
 	GLESDebugDraw *m_debugDraw;
-    CCSprite* listOfObjects;
+    NSMutableArray* listOfObjects;
     CCSprite* backGround;
+    CGPoint defaultPoint;
+    CCSprite* selSpriteToMove;
 }
 
 -(b2Vec2) toMetres:(CGPoint) point;
@@ -28,5 +30,21 @@
 
 -(void) AddBall:(CGPoint) point withSpriteAs:(CCSprite*) ball;
 -(void) AddGoal:(CGPoint) point withSpriteAs:(CCSprite*) goal;
+
+-(void)AddHoverPad;
+-(void)AddConveyorLeft;
+-(void)AddConveyorRight;
+-(void)AddFunnel;
+-(void)AddJumpPadLeft;
+-(void)AddJumpPadRight;
+-(void)AddMagnetPush;
+-(void)AddMagnetPull;
+-(void)AddBackBoard;
+
+-(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event;
+-(CCSprite*)returnSpriteThatIsTouched:(CGPoint) touchedPoint;
+-(void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event;
+-(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event;
+
 
 @end
