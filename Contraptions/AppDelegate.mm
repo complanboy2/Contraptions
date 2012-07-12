@@ -111,11 +111,11 @@
 	[self removeStartupFlicker];
 	
 	// Uncomment the following for the full version of the Game
-    // WelcomeScreen* welcomeScreen = [WelcomeScreen node];
-	// [[CCDirector sharedDirector] runWithScene: welcomeScreen];
+    WelcomeScreen* welcomeScreen = [[WelcomeScreen alloc] init];
+    [[CCDirector sharedDirector] runWithScene: welcomeScreen];
     
-    GenericLevelScene* newLevel = [GenericLevelScene node];
-    [[CCDirector sharedDirector] runWithScene: newLevel];
+//    GenericLevelScene* newLevel = [GenericLevelScene node];
+//    [[CCDirector sharedDirector] runWithScene: newLevel];
     
     
 }

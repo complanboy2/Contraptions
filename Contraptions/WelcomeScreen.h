@@ -12,8 +12,15 @@
 
 @interface WelcomeScreen : CCScene {
     WelcomeScreenLayer* layer;
+    InstructionLayer* instructionLayer;
 }
 -(id) init;
 -(void) dealloc;
+
+-(void) displayInstructions;
+-(void) toggleLayers;
+
+-(void)startNewGame;
+-(void)closeApplication;
 
 @end

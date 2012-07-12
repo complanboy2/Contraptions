@@ -7,6 +7,7 @@
 //
 
 #import "WelcomeScreen.h"
+#import "GenericLevelScene.h"
 #import "LoadingScene.h"
 
 
@@ -15,8 +16,12 @@
 -(id) init {
     NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
     if( self = [super init]) {
-        layer = [WelcomeScreenLayer node];
+        layer = [[WelcomeScreenLayer alloc] init];
         [self addChild:layer];
+        instructionLayer = [[InstructionLayer alloc] init];
+        [self addChild:instructionLayer];
+        [instructionLayer setVisible:NO];
+        [layer initMenu];
     }
     return self;
 }
@@ -26,7 +31,43 @@
     [layer dealloc];
     layer = nil;
     
+    [instructionLayer dealloc];
+    instructionLayer = nil;
+    
     [super dealloc];
+}
+
+-(void) displayInstructions {
+    [instructionLayer initDisplayInstructions];
+    [self toggleLayers];
+}
+
+-(void) toggleLayers {
+    BOOL instructionLayerVisible = [instructionLayer visible];
+    
+    if(instructionLayerVisible) {
+        [instructionLayer setVisible:NO];
+        [layer setVisible:YES];
+    }
+    else {
+        [instructionLayer setVisible:YES];
+        [layer setVisible:NO];
+    }
+}
+
+-(void) startNewGame {
+    NSLog(@"%@ , %@", NSStringFromSelector(_cmd), self);
+    // Create a scene of Generic Scene and Replace it with the existing scene
+    LoadingScene* loadingScene = [[LoadingScene alloc] init];
+    [[CCDirector sharedDirector] replaceScene:loadingScene];
+    
+//    GenericLevelScene* newScene = [[GenericLevelScene alloc] init];
+//    [[CCDirector sharedDirector] replaceScene:newScene];
+    
+}
+
+-(void) closeApplication{
+    NSLog(@"%@ , %@", NSStringFromSelector(_cmd), self);
 }
 
 @end

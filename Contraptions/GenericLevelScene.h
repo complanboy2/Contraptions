@@ -16,6 +16,7 @@
     InventoryLayer* inventoryLayer;
     CCMenu* openInventoryMenu;
     CCMenu* startSimulationMenu;
+    CCMenu* resetMenu;
     CGSize screenSize;
 }
 
@@ -36,5 +37,9 @@
 
 -(void) toggleLayers;
 -(void) startSimulation;
+-(void) stopSimulation;
+
+-(void) toggleSimulation;
+-(void) resetSimulation;
 
 @end

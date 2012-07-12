@@ -10,7 +10,8 @@
 #import "cocos2d.h"
 
 @interface InstructionLayer : CCLayer {
-    
+    CCLabelTTF* labelForInstructions;
+    CCMenu* backMenu;
 }
-
+-(void) initDisplayInstructions;
 @end

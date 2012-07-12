@@ -29,12 +29,19 @@
         [openInventoryMenu setPosition:CGPointMake(screenSize.width - 16, 16)];
         // Added the layer to the scene
         
-        CCMenuItemFont* startSimulation = [CCMenuItemFont itemFromString:@"Start" target:self selector:@selector(startSimulation)];
-        startSimulationMenu = [CCMenu menuWithItems:startSimulation, nil];
+        CCMenuItemFont* startSimulation = [CCMenuItemFont itemFromString:@"Start"];
+        CCMenuItemFont* stopSimulation = [CCMenuItemFont itemFromString:@"Stop"];
+        CCMenuItemToggle* startOrStop = [CCMenuItemToggle itemWithTarget:self selector:@selector(toggleSimulation) items:startSimulation, stopSimulation, nil];
+        startSimulationMenu = [CCMenu menuWithItems:startOrStop, nil];
         [self addChild:startSimulationMenu];
         [startSimulationMenu setPosition:CGPointMake(screenSize.width -16, screenSize.height - 16)];
-        // Added the Start Button to the screen
+        // Added the Start/Stop Button to the screen
         
+        // Add the Reset button
+        CCMenuItemFont* resetButton = [CCMenuItemFont itemFromString:@"Reset" target:self selector:@selector(resetSimulation)];
+        resetMenu = [CCMenu menuWithItems:resetButton, nil];
+        [self addChild:resetMenu];
+        [resetMenu setPosition:CGPointMake(16, 16)];
         // Display the Ball
         [self AddBall];
         
@@ -129,7 +136,23 @@
 }
 
 -(void) startSimulation {
+    [layer toggleSimulation];
     [layer startSimulation];
 }
 
+-(void) stopSimulation {
+    [layer stopSimulation];
+}
+
+-(void) toggleSimulation {
+    [layer toggleSimulation];
+}
+
+-(void) resetSimulation {
+    // Remove everything and add the ball and the goal
+    [layer destroyAllObjectsInWorld];
+    [layer setupBoundaries];
+    [self AddBall];
+    [self AddGoal];
+}
 @end
