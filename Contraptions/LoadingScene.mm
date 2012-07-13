@@ -8,14 +8,18 @@
 
 #import "LoadingScene.h"
 #import "GenericLevelScene.h"
+#import "Level1.h"
 
 @interface LoadingSceneLayer : CCLayer {
     
 }
+@property int level;
+-(id) initWithLevel:(int) levelNumber;
 @end
 
 @implementation LoadingSceneLayer
--(id) init {
+@synthesize level;
+-(id) initWithLevel:(int)levelNumber {
     self = [super init];
     if(self) {
         [self setIsTouchEnabled:YES];
@@ -24,20 +28,39 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         [loadingLabel setPosition:CGPointMake(screenSize.width/2, screenSize.height/2)];
     }
+    self.level = levelNumber;
     return self;
 }
 
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    GenericLevelScene* newScene = [[GenericLevelScene alloc] init];
-    [[CCDirector sharedDirector] replaceScene:newScene];
+    // GenericLevelScene* newScene = [[GenericLevelScene alloc] init];
+    switch(level) {
+        case 1:
+        {
+            Level1* newScene = [[Level1 alloc] init];
+            [[CCDirector sharedDirector] replaceScene:newScene];
+            break;
+        }
+        case 2:
+        {
+            // Second Level
+            break;
+        }
+        default:
+        {
+            // All levels done
+            break;
+        }
+    }
 }
 @end
 
 @implementation LoadingScene
--(id) init {
+
+-(id) initWithLevel:(int) levelNumber {
     self = [super init];
     if(self) {
-        LoadingSceneLayer* loadingLayer = [LoadingSceneLayer node];
+        LoadingSceneLayer* loadingLayer = [[LoadingSceneLayer alloc] initWithLevel: levelNumber];
         [self addChild:loadingLayer];
     }
     return self;

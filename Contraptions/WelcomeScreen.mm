@@ -58,7 +58,7 @@
 -(void) startNewGame {
     NSLog(@"%@ , %@", NSStringFromSelector(_cmd), self);
     // Create a scene of Generic Scene and Replace it with the existing scene
-    LoadingScene* loadingScene = [[LoadingScene alloc] init];
+    LoadingScene* loadingScene = [[LoadingScene alloc] initWithLevel:1];
     [[CCDirector sharedDirector] replaceScene:loadingScene];
     
 //    GenericLevelScene* newScene = [[GenericLevelScene alloc] init];

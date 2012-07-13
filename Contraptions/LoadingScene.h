@@ -12,5 +12,5 @@
 @interface LoadingScene : CCScene {
 
 }
-
+-(id) initWithLevel:(int) levelNumber;
 @end

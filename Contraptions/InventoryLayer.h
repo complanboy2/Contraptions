@@ -11,6 +11,7 @@
 
 @interface InventoryLayer : CCLayer {
     CCMenu* inventoryMenu;
+    CCSprite* backGroundSprite;
 }
 
 -(id)init;

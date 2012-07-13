@@ -170,11 +170,16 @@
                     fixtureDef.friction = 0.5f;
                     fixtureDef.restitution = 1.0f;
                     break;
+                case 100:
+                    // The obstacle ball:
+                    break;
                 default:
-                    staticBox.SetAsBox(1.0f, 1.0f);
+                    NSLog(@"The type is %d",[obj type]);
+                    staticBox.SetAsBox(0.0f, 0.0f);
                     fixtureDef.shape = &staticBox;	
                     fixtureDef.density = 0.0f;
                     fixtureDef.friction = 0.3f;
+                    
                     break;
             }
             // Define the static body fixture.
@@ -282,6 +287,7 @@
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:ball];
     [newSprite setType:0];
+    [newSprite setHasBodyAssociated: YES];
     [listOfObjects addObject:newSprite];
 	bodyDef.userData = newSprite;
 	b2Body *body = world->CreateBody(&bodyDef);
@@ -318,6 +324,7 @@
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:goal];
     [newSprite setType:10];
+    [newSprite setHasBodyAssociated:YES];
     [listOfObjects addObject:newSprite];
 	bodyDef.userData = newSprite;
 	b2Body *body = world->CreateBody(&bodyDef);
@@ -481,4 +488,42 @@
     [listOfObjects removeAllObjects];
     
 }
+
+-(void) AddObstacle:(CGPoint)point withSpriteAs:(CCSprite *)obstacle {
+    
+    b2BodyDef bodyDef;
+	bodyDef.type = b2_dynamicBody;
+    
+	bodyDef.position.Set(point.x/PTM_RATIO, point.y/PTM_RATIO);
+    SpriteWithType* newSprite = [[SpriteWithType alloc] init];
+    [newSprite setImage:obstacle];
+    [newSprite setType:100];
+    [newSprite setHasBodyAssociated:YES];
+    [listOfObjects addObject:newSprite];
+	bodyDef.userData = newSprite;
+	b2Body *body = world->CreateBody(&bodyDef);
+	
+	// Define another box shape for our dynamic body.
+	//b2PolygonShape dynamicBox;
+	//dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
+    b2CircleShape ballShape;
+    ballShape.m_radius = 1.0f;
+	
+	// Define the dynamic body fixture.
+	b2FixtureDef fixtureDef;
+	fixtureDef.shape = &ballShape;	
+	fixtureDef.density = 1.0f;
+	fixtureDef.friction = 1.0f;
+    
+    // By Default, the ball will bounce depending upon the characteristics of the body
+    // that it is colliding with
+    fixtureDef.restitution = 1.0f;
+	body->CreateFixture(&fixtureDef);
+    body->SetLinearVelocity(b2Vec2_zero);
+    
+    [self addChild:obstacle];
+    obstacle.position = point;
+    
+}
+
 @end

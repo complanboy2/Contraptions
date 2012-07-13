@@ -13,7 +13,6 @@
 -(id) init {
     self = [super init];
     if(self) {
-        
         screenSize = [CCDirector sharedDirector].winSize;
         NSLog(@"Screen width %0.2f screen height %0.2f",screenSize.width,screenSize.height);
         
@@ -22,36 +21,45 @@
         [inventoryLayer setVisible:NO];
         [self addChild:layer z:0 tag:1];
         [self addChild:inventoryLayer z:-1 tag:2];
-        [CCMenuItemFont setFontSize:16];
-        CCMenuItemFont* openInventory = [CCMenuItemFont itemFromString:@"Open" target:self selector:@selector(openInventory)];
-        openInventoryMenu = [CCMenu menuWithItems:openInventory, nil];
-        [self addChild:openInventoryMenu z:0 tag:3];
-        [openInventoryMenu setPosition:CGPointMake(screenSize.width - 16, 16)];
-        // Added the layer to the scene
         
-        CCMenuItemFont* startSimulation = [CCMenuItemFont itemFromString:@"Start"];
-        CCMenuItemFont* stopSimulation = [CCMenuItemFont itemFromString:@"Stop"];
-        CCMenuItemToggle* startOrStop = [CCMenuItemToggle itemWithTarget:self selector:@selector(toggleSimulation) items:startSimulation, stopSimulation, nil];
-        startSimulationMenu = [CCMenu menuWithItems:startOrStop, nil];
-        [self addChild:startSimulationMenu];
-        [startSimulationMenu setPosition:CGPointMake(screenSize.width -16, screenSize.height - 16)];
-        // Added the Start/Stop Button to the screen
-        
-        // Add the Reset button
-        CCMenuItemFont* resetButton = [CCMenuItemFont itemFromString:@"Reset" target:self selector:@selector(resetSimulation)];
-        resetMenu = [CCMenu menuWithItems:resetButton, nil];
-        [self addChild:resetMenu];
-        [resetMenu setPosition:CGPointMake(16, 16)];
+        [self setupMenu];
         // Display the Ball
         [self AddBall];
         
         // Set the Goal
         [self AddGoal];
+        
+        // Add the Obstacle
+        [self AddObstacle];
     }
     return self;
 }
 
+-(void) setupMenu {
+    [CCMenuItemFont setFontSize:16];
+    CCMenuItemFont* openInventory = [CCMenuItemFont itemFromString:@"Open" target:self selector:@selector(openInventory)];
+    openInventoryMenu = [CCMenu menuWithItems:openInventory, nil];
+    [self addChild:openInventoryMenu z:0 tag:3];
+    [openInventoryMenu setPosition:CGPointMake(screenSize.width - 16, 16)];
+    // Added the layer to the scene
+    
+    CCMenuItemFont* startSimulation = [CCMenuItemFont itemFromString:@"Start"];
+    CCMenuItemFont* stopSimulation = [CCMenuItemFont itemFromString:@"Stop"];
+    CCMenuItemToggle* startOrStop = [CCMenuItemToggle itemWithTarget:self selector:@selector(toggleSimulation) items:startSimulation, stopSimulation, nil];
+    startSimulationMenu = [CCMenu menuWithItems:startOrStop, nil];
+    [self addChild:startSimulationMenu];
+    [startSimulationMenu setPosition:CGPointMake(screenSize.width -16, screenSize.height - 16)];
+    // Added the Start/Stop Button to the screen
+    
+    // Add the Reset button
+    CCMenuItemFont* resetButton = [CCMenuItemFont itemFromString:@"Reset" target:self selector:@selector(resetSimulation)];
+    resetMenu = [CCMenu menuWithItems:resetButton, nil];
+    [self addChild:resetMenu];
+    [resetMenu setPosition:CGPointMake(16, 16)];
+}
+
 -(void) toggleLayers {
+    NSLog(@"%@ , %@",NSStringFromSelector(_cmd), self);
     BOOL inventoryLayerVisible = [inventoryLayer visible];
     BOOL layerVisible = [layer visible];
     
@@ -154,5 +162,10 @@
     [layer setupBoundaries];
     [self AddBall];
     [self AddGoal];
+    [self AddObstacle];
+}
+
+-(void) AddObstacle {
+    
 }
 @end

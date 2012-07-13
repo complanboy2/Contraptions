@@ -29,10 +29,6 @@ void ContactListener::BeginContact(b2Contact* point) {
     }
     // body 1 is the ball
     switch(typeOfTheSecondObject) {
-        case 1:
-            // Hover Pad
-            // Do nothing, Restitution will take care of it
-            break;
         case 2:
             // LConveyor
             force = b2Vec2(-1.0f, 0.0f);
@@ -79,6 +75,15 @@ void ContactListener::EndContact(b2Contact* point) {
         typeOfTheSecondObject = [type1 type];
     }
     switch (typeOfTheSecondObject) {
+        case 1:
+            // Hover Pad
+            // Do nothing, Restitution will take care of it
+            
+            // Modified to give it an impulse
+            // Lets see what happens
+            velocity  = b2Vec2(0.0f,14.14f*body1->GetMass());
+            body1->ApplyLinearImpulse(velocity, body1->GetWorldCenter());
+            break;
         case 4:
             // Jump Pad Left
             //velocity = b2Vec2(-20.0f, -1*body1->GetLinearVelocity().y);

@@ -21,9 +21,10 @@
 }
 
 -(void)openInventory;
-
+-(void) setupMenu ;
 -(void)AddBall;
 -(void)AddGoal;
+-(void)AddObstacle;
 
 -(void)AddHoverPad;
 -(void)AddConveyorLeft;

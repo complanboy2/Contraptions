@@ -55,6 +55,7 @@
 
 -(void) AddBall:(CGPoint) point withSpriteAs:(CCSprite*) ball;
 -(void) AddGoal:(CGPoint) point withSpriteAs:(CCSprite*) goal;
+-(void) AddObstacle:(CGPoint) point withSpriteAs:(CCSprite*) obstacle;
 
 -(void)AddHoverPad;
 -(void)AddConveyorLeft;
