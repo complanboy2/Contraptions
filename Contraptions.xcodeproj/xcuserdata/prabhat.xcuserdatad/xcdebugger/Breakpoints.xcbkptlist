@@ -107,11 +107,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelScene.mm"
-         timestampString = "363904281.470871"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
          landmarkName = "-AddHoverPad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "466"
-         endingLineNumber = "466"
+         startingLineNumber = "465"
+         endingLineNumber = "465"
          landmarkName = "-ccTouchMoved:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -191,7 +191,63 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
+         timestampString = "363909862.686786"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "459"
+         endingLineNumber = "459"
+         landmarkName = "-ccTouchBegan:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Contraptions/GenericLevelLayer.mm"
+         timestampString = "363909862.686786"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "423"
+         endingLineNumber = "423"
+         landmarkName = "-returnSpriteThatIsTouched:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Contraptions/GenericLevelLayer.mm"
+         timestampString = "363909862.686786"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "430"
+         endingLineNumber = "430"
+         landmarkName = "-returnSpriteThatIsTouched:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Contraptions/GenericLevelLayer.mm"
+         timestampString = "363909862.686786"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "426"
+         endingLineNumber = "426"
+         landmarkName = "-returnSpriteThatIsTouched:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Contraptions/GenericLevelLayer.mm"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "460"
@@ -205,67 +261,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "424"
-         endingLineNumber = "424"
-         landmarkName = "-returnSpriteThatIsTouched:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "431"
-         endingLineNumber = "431"
-         landmarkName = "-returnSpriteThatIsTouched:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "427"
-         endingLineNumber = "427"
-         landmarkName = "-returnSpriteThatIsTouched:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "461"
-         endingLineNumber = "461"
-         landmarkName = "-ccTouchBegan:withEvent:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "478"
-         endingLineNumber = "478"
+         startingLineNumber = "477"
+         endingLineNumber = "477"
          landmarkName = "-ccTouchEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -275,11 +275,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "471"
-         endingLineNumber = "471"
+         startingLineNumber = "470"
+         endingLineNumber = "470"
          landmarkName = "-ccTouchMoved:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -326,7 +326,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
@@ -396,16 +396,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363898121.228242"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "493"
-         endingLineNumber = "493"
+         startingLineNumber = "492"
+         endingLineNumber = "492"
          landmarkName = "-AddObstacle:withSpriteAs:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -415,11 +415,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363897826.061828"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
          landmarkName = "-startSimulation"
          landmarkType = "5">
       </FileBreakpoint>
@@ -429,11 +429,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelLayer.mm"
-         timestampString = "363897868.201278"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
+         startingLineNumber = "110"
+         endingLineNumber = "110"
          landmarkName = "-startSimulation"
          landmarkType = "5">
       </FileBreakpoint>
@@ -443,25 +443,25 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelScene.mm"
-         timestampString = "363900645.850133"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-setupMenu"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelScene.mm"
-         timestampString = "363904281.470871"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "-openInventory"
          landmarkType = "5">
       </FileBreakpoint>
@@ -471,11 +471,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/InventoryLayer.mm"
-         timestampString = "363906637.975826"
+         timestampString = "363906961.996269"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "39"
+         endingLineNumber = "39"
          landmarkName = "-displayInventory"
          landmarkType = "5">
       </FileBreakpoint>
@@ -485,16 +485,16 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelScene.mm"
-         timestampString = "363904281.470871"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-toggleLayers"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
@@ -513,11 +513,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelScene.mm"
-         timestampString = "363904281.470871"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "67"
+         endingLineNumber = "67"
          landmarkName = "-toggleLayers"
          landmarkType = "5">
       </FileBreakpoint>
@@ -527,12 +527,40 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Contraptions/GenericLevelScene.mm"
-         timestampString = "363904281.470871"
+         timestampString = "363909862.686786"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
          landmarkName = "-toggleLayers"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Contraptions/Level1.mm"
+         timestampString = "363907321.709621"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
+         landmarkName = "-AddObstacle"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Contraptions/Level1.mm"
+         timestampString = "363907208.268046"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

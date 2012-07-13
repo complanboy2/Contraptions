@@ -13,23 +13,15 @@
 #import "InventoryLayer.h"
 #import "SpriteWithType.h"
 #import "ContactListener.h"
+#import "Constants.h"
 
 #define PTM_RATIO 32
-
-#define HOVERPAD 1
-#define LCONVEYOR 2
-#define RCONVEYOR 3
-#define JUMPPADLEFT 4
-#define JUMPPADRIGHT 5
-#define FUNNEL 6
-#define MAGNETPUSH 7
-#define MAGNETPULL 8
-#define BACKBOARD 9
 
 @interface GenericLevelLayer : CCLayer {
     b2World* world;
 	GLESDebugDraw *m_debugDraw;
     ContactListener* contactListener;
+    Constants* constant;
     // ContactListener* contactListener;
     
     // It is better to encapsulate these two objects into one class
@@ -63,9 +55,9 @@
 -(void)AddFunnel;
 -(void)AddJumpPadLeft;
 -(void)AddJumpPadRight;
--(void)AddMagnetPush;
--(void)AddMagnetPull;
--(void)AddBackBoard;
+//-(void)AddMagnetPush;
+//-(void)AddMagnetPull;
+//-(void)AddBackBoard;
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event;
 -(CCSprite*)returnSpriteThatIsTouched:(CGPoint) touchedPoint;

@@ -9,6 +9,16 @@
 #ifndef Contraptions_ContactListener_h
 #define Contraptions_ContactListener_h
 
+#define BALL 0
+#define HOVERPAD 1
+#define LCONVEYOR 2
+#define RCONVEYOR 3
+#define JUMPPADLEFT 4
+#define JUMPPADRIGHT 5
+#define FUNNEL 6
+#define OBSTACLE 7
+#define GOAL 8
+
 #import "cocos2d.h"
 #import "SpriteWithType.h"
 #import "Box2D.h"

@@ -175,6 +175,8 @@
 		19779FED15AC351D00B182F5 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19779FEC15AC351D00B182F5 /* background.jpg */; };
 		197EC59815B09F4000BD1C09 /* obstacleBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 197EC59715B09F4000BD1C09 /* obstacleBall.png */; };
 		197EC59B15B0C51400BD1C09 /* backgroundInventory.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197EC59A15B0C51400BD1C09 /* backgroundInventory.jpg */; };
+		197EC59E15B0CB3900BD1C09 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 197EC59D15B0CB3800BD1C09 /* Constants.m */; };
+		197EC5A115B0D29500BD1C09 /* Level2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 197EC5A015B0D29500BD1C09 /* Level2.mm */; };
 		1987021515AFC07E00316774 /* Level1.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1987021415AFC07D00316774 /* Level1.mm */; };
 		1991371F15ADAC4F00AA4020 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 1991371D15ADAC4F00AA4020 /* right.png */; };
 		1991372015ADAC4F00AA4020 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 1991371E15ADAC4F00AA4020 /* left.png */; };
@@ -516,6 +518,10 @@
 		19779FEC15AC351D00B182F5 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = Resources/background.jpg; sourceTree = "<group>"; };
 		197EC59715B09F4000BD1C09 /* obstacleBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacleBall.png; sourceTree = "<group>"; };
 		197EC59A15B0C51400BD1C09 /* backgroundInventory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundInventory.jpg; sourceTree = "<group>"; };
+		197EC59C15B0CB3800BD1C09 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		197EC59D15B0CB3800BD1C09 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		197EC59F15B0D29500BD1C09 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
+		197EC5A015B0D29500BD1C09 /* Level2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level2.mm; sourceTree = "<group>"; };
 		1987020F15AF0A5600316774 /* GameLevelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLevelProtocol.h; sourceTree = "<group>"; };
 		1987021315AFC07D00316774 /* Level1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
 		1987021415AFC07D00316774 /* Level1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1.mm; sourceTree = "<group>"; };
@@ -599,6 +605,8 @@
 				193B16C015AB19EB00814B9F /* Supporting Files */,
 				1987021315AFC07D00316774 /* Level1.h */,
 				1987021415AFC07D00316774 /* Level1.mm */,
+				197EC59F15B0D29500BD1C09 /* Level2.h */,
+				197EC5A015B0D29500BD1C09 /* Level2.mm */,
 				193B16DB15AB1E8600814B9F /* LoadingScene.h */,
 				193B16DC15AB1E8600814B9F /* LoadingScene.mm */,
 				193B16D815AB1A0600814B9F /* WelcomeScreen.h */,
@@ -618,6 +626,8 @@
 				19E7C30515AD93A400576C24 /* ContactListener.h */,
 				19E7C30615AD942600576C24 /* ContactListener.mm */,
 				1987020F15AF0A5600316774 /* GameLevelProtocol.h */,
+				197EC59C15B0CB3800BD1C09 /* Constants.h */,
+				197EC59D15B0CB3800BD1C09 /* Constants.m */,
 			);
 			name = Contraptions;
 			path = /Users/prabhat/ObjCTutorials/Contraptions/Contraptions;
@@ -1325,6 +1335,8 @@
 				19E7C30715AD942700576C24 /* ContactListener.mm in Sources */,
 				19481AE115AE081A0043B2A0 /* InstructionLayer.mm in Sources */,
 				1987021515AFC07E00316774 /* Level1.mm in Sources */,
+				197EC59E15B0CB3900BD1C09 /* Constants.m in Sources */,
+				197EC5A115B0D29500BD1C09 /* Level2.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

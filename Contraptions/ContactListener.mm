@@ -7,6 +7,7 @@
 //
 
 #import "ContactListener.h"
+#import "LoadingScene.h"
 
 void ContactListener::BeginContact(b2Contact* point) {
     // Get the part which is the ball
@@ -29,26 +30,37 @@ void ContactListener::BeginContact(b2Contact* point) {
     }
     // body 1 is the ball
     switch(typeOfTheSecondObject) {
-        case 2:
+        case LCONVEYOR:
             // LConveyor
             force = b2Vec2(-1.0f, 0.0f);
             // body1->ApplyForce(force, body1->GetWorldCenter());
             body1->SetLinearVelocity(force);
             break;
-        case 3:
+        case RCONVEYOR:
             // RConveyor
             force = b2Vec2(1.0f, 0.0f);
             // body1->ApplyForce(force, body1->GetWorldCenter());
             body1->SetLinearVelocity(force);
             break;
-        case 6:
+        case FUNNEL:
             // Funnel
             force = b2Vec2(0.0f, -20.0f);
             body1->ApplyForce(force, body1->GetWorldCenter());
             break;
-        case 10:
+        case GOAL:
+        {
             NSLog(@"Level Done");
+            LoadingScene* nextLevel = [[LoadingScene alloc] initWithLevel:2];
+            [[CCDirector sharedDirector] replaceScene:nextLevel];
             break;
+        }
+        case OBSTACLE:
+        {
+            NSLog(@"Restart the level");
+            LoadingScene* nextLevel = [[LoadingScene alloc] initWithLevel:1];
+            [[CCDirector sharedDirector] replaceScene:nextLevel];
+            break;
+        }
         default:
             // NSLog(@"The type in the begincontact method was %d",typeOfTheSecondObject);
             break;
@@ -75,7 +87,7 @@ void ContactListener::EndContact(b2Contact* point) {
         typeOfTheSecondObject = [type1 type];
     }
     switch (typeOfTheSecondObject) {
-        case 1:
+        case HOVERPAD:
             // Hover Pad
             // Do nothing, Restitution will take care of it
             
@@ -84,12 +96,12 @@ void ContactListener::EndContact(b2Contact* point) {
             velocity  = b2Vec2(0.0f,14.14f*body1->GetMass());
             body1->ApplyLinearImpulse(velocity, body1->GetWorldCenter());
             break;
-        case 4:
+        case JUMPPADLEFT:
             // Jump Pad Left
             //velocity = b2Vec2(-20.0f, -1*body1->GetLinearVelocity().y);
             //body1->SetLinearVelocity(velocity);
             break;
-        case 5:
+        case JUMPPADRIGHT:
             // Jump Pad Right
             //velocity = b2Vec2(20.0f, -1*body1->GetLinearVelocity().y);
             //body1->SetLinearVelocity(velocity);

@@ -8,6 +8,15 @@
 
 #import "GenericLevelLayer.h"
 
+#define BALL 0
+#define HOVERPAD 1
+#define LCONVEYOR 2
+#define RCONVEYOR 3
+#define JUMPPADLEFT 4
+#define JUMPPADRIGHT 5
+#define FUNNEL 6
+#define OBSTACLE 7
+#define GOAL 8
 
 @implementation GenericLevelLayer
 
@@ -53,6 +62,8 @@
         isSimulationRunning = NO;
         // The simulation has not started yet.
         // The Boolean variable blocks it
+        
+        constant = [[Constants alloc] init];
     }
     return self;
 }
@@ -286,7 +297,7 @@
 	bodyDef.position.Set(point.x/PTM_RATIO, point.y/PTM_RATIO);
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:ball];
-    [newSprite setType:0];
+    [newSprite setType:[constant ball] ];
     [newSprite setHasBodyAssociated: YES];
     [listOfObjects addObject:newSprite];
 	bodyDef.userData = newSprite;
@@ -323,7 +334,7 @@
 	bodyDef.position.Set(point.x/PTM_RATIO, point.y/PTM_RATIO);
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:goal];
-    [newSprite setType:10];
+    [newSprite setType:[constant goal]];
     [newSprite setHasBodyAssociated:YES];
     [listOfObjects addObject:newSprite];
 	bodyDef.userData = newSprite;
@@ -357,7 +368,7 @@
     [self initialiseASprite:hoverPad];
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:hoverPad];
-    [newSprite setType:HOVERPAD];
+    [newSprite setType:[constant hoverPad]];
     [listOfObjects addObject:newSprite];
     
 }
@@ -367,7 +378,7 @@
     [self initialiseASprite:conveyorLeft];
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:conveyorLeft];
-    [newSprite setType:LCONVEYOR];
+    [newSprite setType:[constant lconveyor]];
     [listOfObjects addObject:newSprite];
 }
 
@@ -376,7 +387,7 @@
     [self initialiseASprite:conveyorRight];
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:conveyorRight];
-    [newSprite setType:RCONVEYOR];
+    [newSprite setType:[constant rconveyor]];
     [listOfObjects addObject:newSprite];
 }
 
@@ -385,7 +396,7 @@
     [self initialiseASprite:funnel];
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:funnel];
-    [newSprite setType:FUNNEL];
+    [newSprite setType:[constant funnel]];
     [listOfObjects addObject:newSprite];
 }
 
@@ -394,7 +405,7 @@
     [self initialiseASprite:jumpPadLeft];
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:jumpPadLeft];
-    [newSprite setType:JUMPPADLEFT];
+    [newSprite setType:[constant leftJumpPad]];
     [listOfObjects addObject:newSprite];
 }
 
@@ -403,20 +414,8 @@
     [self initialiseASprite:jumpPadRight];
     SpriteWithType* newSprite = [[SpriteWithType alloc] init];
     [newSprite setImage:jumpPadRight];
-    [newSprite setType:JUMPPADRIGHT];
+    [newSprite setType:[constant rightJumpPad]];
     [listOfObjects addObject:newSprite];
-}
-
--(void)AddMagnetPush {
-    
-}
-
--(void)AddMagnetPull {
-    
-}
-
--(void)AddBackBoard {
-    
 }
 
 -(CCSprite*) returnSpriteThatIsTouched:(CGPoint)touchedPoint {

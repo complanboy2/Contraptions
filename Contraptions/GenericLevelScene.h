@@ -20,11 +20,11 @@
     CGSize screenSize;
 }
 
--(void)openInventory;
+-(void) openInventory;
 -(void) setupMenu ;
--(void)AddBall;
--(void)AddGoal;
--(void)AddObstacle;
+-(void) AddBall;
+-(void) AddGoal;
+-(void) AddObstacle;
 
 -(void)AddHoverPad;
 -(void)AddConveyorLeft;

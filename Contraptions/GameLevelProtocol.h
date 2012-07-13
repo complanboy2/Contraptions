@@ -12,5 +12,4 @@
 -(void) AddBall;
 -(void) AddGoal;
 -(void) AddObstacles;
--(void) loadNextlevel;
 @end

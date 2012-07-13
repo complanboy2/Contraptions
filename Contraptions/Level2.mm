@@ -1,15 +1,15 @@
 //
-//  Level1.m
+//  Level2.m
 //  Contraptions
 //
-//  Created by Prabhat Kiran Bharathidhasan on 12/07/12.
+//  Created by Prabhat Kiran Bharathidhasan on 13/07/12.
 //  Copyright 2012 mclaren.kiran@gmail.com. All rights reserved.
 //
 
-#import "Level1.h"
+#import "Level2.h"
 
 
-@implementation Level1
+@implementation Level2
 
 -(id) init {
     self = [super init];
@@ -33,7 +33,7 @@
         
         // Load the obstacles
         [self AddObstacle];
-        NSLog(@"Loading Level 1");
+        NSLog(@"Loading Level 2");
     }
     return self;
 }
@@ -60,10 +60,9 @@
 }
 
 -(void) AddObstacle {
-    NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
-    CCSprite* obstacleSprite = [CCSprite spriteWithFile:@"obstacleBall.png"];
-    [layer AddObstacle:CGPointMake(screenSize.width/2, screenSize.height/2) withSpriteAs:obstacleSprite];
-    NSLog(@"Added an obstacle to the layer");
+//    NSLog(@"%@ : %@",NSStringFromSelector(_cmd), self);
+//    CCSprite* obstacleSprite = [CCSprite spriteWithFile:@"obstacleBall.png"];
+//    [layer AddObstacle:CGPointMake(screenSize.width/2, screenSize.height/2) withSpriteAs:obstacleSprite];
+//    NSLog(@"Added an obstacle to the layer");
 }
-
 @end

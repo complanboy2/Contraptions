@@ -35,6 +35,10 @@
     return self;
 }
 
+-(void) AddObstacle {
+    
+}
+
 -(void) setupMenu {
     [CCMenuItemFont setFontSize:16];
     CCMenuItemFont* openInventory = [CCMenuItemFont itemFromString:@"Open" target:self selector:@selector(openInventory)];
@@ -163,9 +167,5 @@
     [self AddBall];
     [self AddGoal];
     [self AddObstacle];
-}
-
--(void) AddObstacle {
-    
 }
 @end

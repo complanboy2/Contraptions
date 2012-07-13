@@ -1,18 +1,18 @@
 //
-//  Level1.h
+//  Level2.h
 //  Contraptions
 //
-//  Created by Prabhat Kiran Bharathidhasan on 12/07/12.
+//  Created by Prabhat Kiran Bharathidhasan on 13/07/12.
 //  Copyright 2012 mclaren.kiran@gmail.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GenericLevelScene.h"
-#import "GameLevelProtocol.h"
 
-@interface Level1 : GenericLevelScene <GameLevelProtocol>
-
+@interface Level2 : GenericLevelScene {
+    
+}
 -(id) init;
 -(void) dealloc;
 

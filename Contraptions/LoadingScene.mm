@@ -9,6 +9,7 @@
 #import "LoadingScene.h"
 #import "GenericLevelScene.h"
 #import "Level1.h"
+#import "Level2.h"
 
 @interface LoadingSceneLayer : CCLayer {
     
@@ -43,6 +44,8 @@
         }
         case 2:
         {
+            Level2* newScene = [[Level2 alloc] init];
+            [[CCDirector sharedDirector] replaceScene:newScene];
             // Second Level
             break;
         }
